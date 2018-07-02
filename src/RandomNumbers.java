@@ -1,14 +1,24 @@
 import java.util.Iterator;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.TreeSet;
 
 public class RandomNumbers {
     public static void main(String[] args) {
         TreeSet<Integer> treeSet = new TreeSet<>();
         Random rand = new Random();
+        Scanner scan = new Scanner(System.in);
+
+        int size;
+
+        do{
+            System.out.println("Podaj ilość losowanych licz (liczba dodatnia): ");
+            size = scan.nextInt();
+        } while(size<=0);
 
 
-        for(int i=0; i<50; i++){
+
+        for(int i=0; i<size; i++){
             treeSet.add(rand.nextInt(1000));
         }
 
