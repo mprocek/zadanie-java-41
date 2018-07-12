@@ -11,33 +11,31 @@ public class RandomNumbers {
 
         int size;
 
-        do{
+        do {
             System.out.println("Podaj ilość losowanych licz (liczba dodatnia): ");
             size = scan.nextInt();
-        } while(size<=0);
+        } while (size <= 0);
 
-
-
-        for(int i=0; i<size; i++){
+        for(int i=0; treeSet.size()<size;i++){
             treeSet.add(rand.nextInt(1000));
         }
 
         System.out.println("Najmniejsza: " + treeSet.first());
         System.out.println("Największa: " + treeSet.last());
 
-        int sum=0;
+        int sum = 0;
 
         Iterator<Integer> integerIterator = treeSet.iterator();
-        while(integerIterator.hasNext()){
-            sum+=integerIterator.next();
+        while (integerIterator.hasNext()) {
+            sum += integerIterator.next();
         }
 
-        double srednia = sum/treeSet.size();
+        double srednia = sum / treeSet.size();
 
         System.out.println("Srednia: " + srednia);
 
-        for (Integer num:treeSet) {
-            if(num>srednia)
+        for (Integer num : treeSet) {
+            if (num > srednia)
                 System.out.println(num);
         }
     }
